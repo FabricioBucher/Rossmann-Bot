@@ -17,6 +17,9 @@ TOKEN = '5869879507:AAGMhvcKGAh8vMOwt43CahFg-S95vH2qtIc'
 # webhook
 # https://api.telegram.org/bot5869879507:AAGMhvcKGAh8vMOwt43CahFg-S95vH2qtIc/setWebhook?url=https://cfb087759bb6be.lhr.life
 
+# webhook render
+# https://api.telegram.org/bot5869879507:AAGMhvcKGAh8vMOwt43CahFg-S95vH2qtIc/setWebhook?url=https://rossmann-bot-api.onrender.com
+
 # send message
 # https://api.telegram.org/bot5869879507:AAGMhvcKGAh8vMOwt43CahFg-S95vH2qtIc/sendMessage?chat_id=1124066742&text=Hi Fabrício
 
@@ -83,7 +86,7 @@ def parse_message(message):
 # Iniciando API
 app = Flask(__name__)
 
-app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         message = request.get_json()
